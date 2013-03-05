@@ -39,9 +39,11 @@ The applicatoin uses gradle as it build script.  So you would first need to have
 Once gradle has been setup then you can run the application by following these steps:
 * go the the webapp folder
 * within the webapp folder run the following command:
+
 ```
 gradle jettyRun -Denv=prod
 ```
+
 * open a browser and go to the location http://localhost:8080/webapp
 * now interact with the application
 
@@ -50,13 +52,22 @@ gradle jettyRun -Denv=prod
 * address book can only be defined within the application, you can't import an address book from another location
 
 #Useful gradle commands
-* gradle check
+* ```gradle check```
+
 Validates the projects defined by running the test cases as well as running the checkstyle, findbugs, pmd plugins over the project. Note there are still checkstyle warnings as the project has been created to show how I would develop software, so time was a factor.  The reports for the pluings can be found under build/reports
-* gradle test
+
+* ```gradle test```
+
 Runs the units test for the application.
-* gradle eclipse
+
+* ```gradle eclipse```
+
 Create the eclipse .project and .classpath
-* gradle jettyRun
+
+* ```gradle jettyRun```
+
 Runs the webapp.
-* gradle clean
+
+* ```gradle clean```
+
 remove the build directory.
