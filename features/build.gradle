@@ -1,0 +1,19 @@
+dependencies {
+    testCompile "org.seleniumhq.selenium:selenium-java:2.26.0"
+    testCompile "org.springframework:spring-context:3.1.3.RELEASE"
+    testCompile "org.jbehave:jbehave-core:3.7.5"
+    testCompile "org.jbehave:jbehave-spring:3.7.5"
+}
+
+test.dependsOn ':webapp:war'
+
+test.doFirst { 
+   project(':webapp').tasks.jettyRunWar.daemon = true
+   project(':webapp').tasks.jettyRunWar.contextPath = '/'
+   project(':webapp').tasks.jettyRunWar.execute()
+}
+
+test.doLast {
+   project(':webapp').tasks.jettyStop.execute()
+}
+

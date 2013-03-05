@@ -1,0 +1,19 @@
+p {
+	border: none;
+	margin-bottom: 0px;
+	text-align: left;
+	padding-top: 0px;
+}
+
+a {
+	color : black;
+}
+
+li.selected a {
+	color : blue;
+	font-weight : bold;
+}
+
+.error {
+	color : #992E2E;
+}
