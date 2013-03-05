@@ -17,11 +17,17 @@ The project is made up of two projects:
 This is where the main work for the application resides.  It contains the applications code and unit tests.  The task to run the webapp is jettyRun.  For the weabpp to work you need to define an environment variable "-Denv=<environment>" eg. *gradle jettyRun -Denv=prod*.  Running the application without the environment variable will result in a exception occuring and the application not running.
 
 The are 3 environments defined:
+
 * dev
+
 This uses an in memory database, so on restarting of the server all data is lost and the database is re-created.
+
 * prod
+
 This creates a database on the filesystem under the user directory named addressbook. i.e. ~/addressbook.  This location can be changed under the property file src\main\resources\app-prod.properties.  Change the end of the jdbc.url to the location you wish.
+
 * test
+
 This uses an in memory database.  This environment was envisioned to run the features project.  Features has not been fully developed, so left this as an in memory database, ideally would want a database under the filesystem that will allow us to run the tests in features.
 
 ##features
